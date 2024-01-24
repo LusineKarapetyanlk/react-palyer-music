@@ -1,0 +1,39 @@
+.SongRow{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 8px;
+    border-bottom: 1px solid #dddbdb96;
+    gap: 2px;
+    padding-left: 5px;
+  
+  
+    .songrow_column{
+        padding: 5px 10px;
+        color: #363636fe;
+    }
+    .SongRow_playButton{
+        flex:5%;
+       
+    }
+    .SongRow_songName{
+        flex:30%;
+      
+    }
+    .SongRow_artistName{
+        flex:30%;
+
+    }
+    .SongRow_trackNumber{
+        flex:10%;
+
+    }
+    .SongRow_settings{ 
+        flex:25%;
+        display: flex;
+        justify-content: space-around;
+        
+    }
+}

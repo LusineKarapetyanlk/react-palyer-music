@@ -1,0 +1,39 @@
+.songlist_container{
+    .songlist_header{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        font-family: inherit;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        margin: 5px 0;
+        gap: 2px;
+      
+
+        .songlist_header_column{
+            padding: 5px 10px;
+            color: #585858fe;
+            background-color: #dddbdb96;
+        }
+        .songlist_header_column1{
+            flex:5%;
+           
+        }
+        .songlist_header_column2{
+            flex:30%;
+          
+        }
+        .songlist_header_column3{
+            flex:30%;
+   
+        }
+        .songlist_header_column4{
+            flex:10%;
+
+        }
+        .songlist_header_column5{ 
+            flex:25%;
+
+        }
+    }
+}

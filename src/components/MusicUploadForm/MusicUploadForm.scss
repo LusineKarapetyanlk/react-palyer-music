@@ -1,0 +1,89 @@
+.MusicUploadForm_wrapper{
+    padding: 5px 0 25px;
+    border-radius: 20px;
+    background-color: rgba(189, 189, 189, 0.597);
+    .error-message{
+        color: red;
+        padding: 5px 20px ;
+    }
+    .MusicUploadForm_title{
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+    .MusicUploadForm_top{
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+
+        #MusicUploadForm_label{
+            border-radius: 8px;
+            border: 1px solid transparent;
+            padding: 0.6em 1.2em;
+            font-size: 1em;
+            font-weight: 500;
+            font-family: inherit;
+            background-color:  #7bee6779;
+            cursor: pointer;
+            transition: border-color 0.25s;
+            text-wrap: nowrap;
+            box-shadow: inset -1px 0px 5px 0px;
+              &:hover {
+                border-color: #000;
+              }
+              &:active {
+               outline: 4px auto #000;
+             }
+        }
+        .MusicUploadForm_label{
+            background-color: #fffefe38 !important;
+        }
+        #MusicUploadForm_input{
+            display: none;
+        }
+        .Submit_btn{
+            background-color:  #7bee6779 !important;
+        }
+    }
+    .MusicUploadForm{
+        transition: all 3s;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        padding: 20px;
+
+        label{
+            margin-right: 5px;
+            width: 50px;
+        }
+        .Upload_label{
+            display: flex;
+            flex-direction: column;
+            color: #0000007c;
+        }
+        input{
+            
+            flex: 30%;
+            border-radius: 18px;
+            border: 1px solid #686666;
+            padding: 0.6em 1.2em;
+            font-size: 0.8em;
+            font-weight: 500;
+            font-family: inherit;
+            background-color:transparent;
+            cursor: pointer;
+            transition: border-color 0.25s;
+         
+      
+            &:focus{
+              background-color: #f3f3f370;
+            }
+          }
+    }
+}
+
+@media (max-width: 700px){
+    .MusicUploadForm{
+        flex-direction: column;
+    }
+}
