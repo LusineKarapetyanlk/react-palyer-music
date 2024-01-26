@@ -1,46 +1,42 @@
-import Navbar from "../Navbar"
-import SongList from "../SongList"
-import MusicUploadForm from "../MusicUploadForm"
-import "./wrapper.scss"
-import { useState } from "react"
-// import { useState } from "react"
+import { useRef, useState } from "react";
+import MusicUploadForm from "../MusicUploadForm";
+import { songs } from "../../helpers";
+import SongList from "../SongList";
+import Navbar from "../Navbar";
+import "./wrapper.scss";
 
 function Wrapper() {
-  const Data = [
-    {
-      artist:"Adam",
-      file:"/audio/Adam-Zurek.mp3",
-      name:" Zhurek Isko Alvarez remix",
-      trackNumber:1
-    },
-    {
-      artist:"Ed Sheran",
-      file:"/audio/Shape of You.mp3",
-      name:" Shape of You",
-      trackNumber:2
-    },
-    {
-      artist:"Ed Sheran2",
-      file:"/audio/Shape of You.mp3",
-      name:" Shape of You",
-      trackNumber:3
-    },
-    {
-      artist:"Ed Sheran3",
-      file:"/audio/Shape of You.mp3",
-      name:" Shape of You",
-      trackNumber:5
-    }
-  ]
-  const [songData, setSongData] = useState(Data)
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const [songData, setSongData] = useState(songs);
+  const playedSound = useRef(null);
+
+  const handlePlayNext = () => {
+    setCurrentSongIndex(currentSongIndex + 1);
+  }
 
   return (
     <div className="wrapper">
         <div>
-          <Navbar songData={songData}/>
-          <SongList songData={songData}/>
+          <Navbar songData={songData} 
+            playedSound={playedSound}
+            isPlayingAll={isPlayingAll}
+            setIsPlayingAll={setIsPlayingAll}
+            currentSongIndex={currentSongIndex}
+          />
+
+          <SongList songData={songData} 
+            playedSound={playedSound} 
+            isPlayingAll={isPlayingAll}
+            handlePlayNext={handlePlayNext}
+            setIsPlayingAll={setIsPlayingAll}
+            currentSongIndex={currentSongIndex}
+            setCurrentSongIndex={setCurrentSongIndex}
+          />
         </div>
-        <MusicUploadForm songData={songData} setSongData={setSongData} />
+       
+        <MusicUploadForm songData={songData} setSongData={setSongData}  />
+       
     </div>
   )
 }

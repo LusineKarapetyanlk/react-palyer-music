@@ -1,31 +1,28 @@
-
-
-
 body {
-  
   margin: 0;
   display: flex;
   justify-content: center;
 
 
   #root {
-    margin: 20px auto;
     width: 100%;
+    margin: 20px auto;
     max-width: 1024px;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
     button {
-      border-radius: 8px;
-      border: 1px solid transparent;
-      padding: 0.6em 1.2em;
       font-size: 1em;
-      font-weight: 500;
-      font-family: inherit;
-      background-color: #e9e6e6c1;
       cursor: pointer;
-      transition: border-color 0.25s;
+      font-weight: 500;
+      border-radius: 8px;
       text-wrap: nowrap;
+      padding: 0.6em 1.2em;
+      font-family: inherit;
+      border: 1px solid transparent;
+      background-color: #e9e6e6c1;
+      transition: border-color 0.25s;
       box-shadow: inset -1px 0px 5px 0px;
+
         &:hover {
           border-color: #000;
         }
@@ -35,15 +32,3 @@ body {
     }
   }
 }
-
-
-
-
-// button:hover {
-//   border-color: #646cff;
-// }
-// button:focus,
-// button:focus-visible {
-//   outline: 4px auto -webkit-focus-ring-color;
-// }
-

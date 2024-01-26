@@ -1,14 +1,13 @@
 .songlist_container{
     .songlist_header{
-        display: flex;
-        justify-content: space-between;
-        font-weight: 500;
-        font-family: inherit;
-        border-radius: 8px;
-        border: 1px solid transparent;
-        margin: 5px 0;
         gap: 2px;
-      
+        display: flex;
+        margin: 5px 0;
+        font-weight: 500;
+        border-radius: 8px;
+        font-family: inherit;
+        border: 1px solid transparent;
+        justify-content: space-between;
 
         .songlist_header_column{
             padding: 5px 10px;

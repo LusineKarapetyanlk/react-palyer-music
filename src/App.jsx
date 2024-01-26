@@ -1,10 +1,7 @@
-
-import './App.css'
-import Wrapper from './components/Wrapper'
+import Wrapper from './components/Wrapper';
 
 function App() {
  
-
   return (
     <>
       <Wrapper/>
@@ -12,4 +9,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

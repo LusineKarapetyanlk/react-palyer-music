@@ -1,17 +1,15 @@
-
 import { useFormik } from 'formik';
 import icon from "/download.png";
 import "./MusicUploadForm.scss";
 
-
-const MusicUploadForm = ({ setSongData, songData }) => {
+const MusicUploadForm = ({ setSongData, songData}) => {
 
   const formik = useFormik({
     initialValues: {
       name: "",
       artist: "",
-      trackNumber: 0,
       file: null,
+      trackNumber: 0,
     },
     validate: (values) => {
       const errors = {};
@@ -20,32 +18,32 @@ const MusicUploadForm = ({ setSongData, songData }) => {
         errors.file = 'Please, select a valid MP3 or WAV file.';
       }
       if (values.file && !values.name) {
-          errors.inputs = 'Please fill in all information when uploading a file.';
+          errors.inputs = 'Please fill in all information below when uploading a file.';
       }
       //we can add  additional validation here
       return errors;
     },
     // we can use it with API
-    // onSubmit: async (values, { setSubmitting }) => {
-    // console.log(values);  
-    //   try {
-    //     const response = await axios.post(URL, values);
-    //     console.log('Form submission successful:', response.data);
-    //   } catch (error) {
-    //     console.error('Form submission failed:', error.message);
-    //   }
+        // onSubmit: async (values, { setSubmitting }) => {
+        // console.log(values);  
+        //   try {
+        //     const response = await axios.post(URL, values);
+        //     console.log('Form submission successful:', response.data);
+        //   } catch (error) {
+        //     console.error('Form submission failed:', error.message);
+        //   }
 
-    //   setSubmitting(false);
-    // },
+        //   setSubmitting(false);
+        // },
     onSubmit:(values, { setSubmitting })=>{
       console.log('Form values submitted:', values);
       // we can check if there are any errors 
       if (Object.keys(formik.errors).length === 0) {
         //submit logic
         setSongData([...songData,{
+          name:values.name,
           artist:values.artist,
           file:values.file.name,
-          name:values.name,
           trackNumber:values.trackNumber
         }])
         console.log('No validation errors, proceed with submission');
@@ -53,9 +51,9 @@ const MusicUploadForm = ({ setSongData, songData }) => {
         console.log('Validation errors');
       }
       formik.resetForm();
+      document.querySelector("#MusicUploadForm_input").value = ""
       setSubmitting(false);
     },
-    
     
     });
 
@@ -84,11 +82,11 @@ const MusicUploadForm = ({ setSongData, songData }) => {
             {formik.values.file?.name || "Upload Music"}
           </label>
           <input
-            id="MusicUploadForm_input"
             name="file"
             type="file"
             accept="audio/*"
             onChange={handleFileChange}
+            id="MusicUploadForm_input"
           />
           <button
             type="submit"

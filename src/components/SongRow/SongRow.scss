@@ -1,14 +1,19 @@
 .SongRow{
+    gap: 2px;
     display: flex;
-    justify-content: space-between;
     text-align: left;
     font-weight: 500;
-    font-family: inherit;
-    border-radius: 8px;
-    border-bottom: 1px solid #dddbdb96;
-    gap: 2px;
     padding-left: 5px;
-  
+    border-radius: 8px;
+    align-items: center;
+    font-family: inherit;
+    transition: box-shadow .3s;
+    justify-content: space-between; 
+    border-bottom: 1px solid #dddbdb96;
+    
+    &:hover{
+       box-shadow: 0 0 11px rgba(33,33,33,.2);
+    }
   
     .songrow_column{
         padding: 5px 10px;
@@ -16,6 +21,7 @@
     }
     .SongRow_playButton{
         flex:5%;
+        cursor: pointer;
        
     }
     .SongRow_songName{
@@ -35,5 +41,15 @@
         display: flex;
         justify-content: space-around;
         
+        .song_heart{
+            cursor: pointer;
+        }
+        .delete_btn{
+            cursor: pointer;
+        }
+        
     }
+}
+.SongRow_active{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
