@@ -1,5 +1,5 @@
 import song1 from '../assets/audio/minix.mp3';
-import song2 from '../assets/audio/sample-file-1.wav';
+import song2 from '../assets/audio/AdamZhurek.mp3';
 import song3 from '../assets/audio/sample-file-4.wav';
 import song4 from '../assets/audio/Shape of You.mp3';
 
